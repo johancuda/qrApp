@@ -1,0 +1,21 @@
+<head>
+  <title>QR_test</title>
+</head>
+
+<body>
+  <h1>Welcome to Meteor!</h1>
+  <h2>test</h2>
+  {{> form_new_post}}
+  
+</body>
+
+
+<template name="form_new_post">
+<div class="container">
+  <form>
+    <input type="text" name="title" placeholder="Titre du post"> 
+    <textarea name="texte"  cols="30" rows="10"></textarea>
+    <button type="submit" name="bouton"> Poster</button>
+  </form>
+</div>
+</template>
