@@ -27,8 +27,19 @@ Template.form_new_post.events({
   },
 });
 
+// eslint-disable-next-line no-undef
 Template.list_post.helpers({
   posts() {
     return Posts.find().fetch();
+  },
+});
+
+// bouton déconnexion:
+// eslint-disable-next-line no-undef
+Template.accueil.events({
+  // eslint-disable-next-line no-unused-vars
+  'click .js-logout'(event, templateInstance) {
+    // eslint-disable-next-line no-undef
+    Meteor.logout();
   },
 });

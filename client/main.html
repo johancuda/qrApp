@@ -4,11 +4,26 @@
 
 <body>
   <h1>App currently loading...</h1>
+
+  {{#if currentUser}}
+    {{> accueil}}
+  {{else}}
+    <p>Vous pouvez vous connecter avec bla@bla.ch / 123456, ou faire un nouveau compte, mettons le même mot de passe partout pour l'instant :)</p>
+    {{> atForm}}
+  {{/if}}
+  
+</body>
+
+
+<!--Template de ce que voit l'utilisateur une fois connecté-->
+<template name="accueil">
+  <button class="js-logout">Se déconnecter</button>
   <hr>
   {{> form_new_post}}
   <hr>
   {{>list_post}}
-</body>
+</template>
+
 
 <!--Template qui crée un post dans un formulaire-->
 <template name="form_new_post">
