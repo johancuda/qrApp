@@ -4,22 +4,16 @@
 
 <body>
   <h1>Welcome to Meteor!</h1>
-  <h2>test</h2>
   {{> form_new_post}}
-
-  <div class="alert alert-primary" role="alert">
-    A simple primary alert—check it out!
-  </div>
-  
 </body>
 
 
 <template name="form_new_post">
 <div class="container">
-  <form>
-    <input type="text" name="title" placeholder="Titre du post"> 
-    <textarea name="texte"  cols="30" rows="10"></textarea>
-    <button type="submit" name="bouton"> Poster</button>
+  <form class="js-new-post">
+    <input class ="form-control" type="text" name="title" placeholder="Titre du post"> 
+    <textarea class ="form-control" name="text"  cols="30" rows="10"></textarea>
+    <button class = "btn btn-primary" type="submit" name="bouton"> Poster</button>
   </form>
 </div>
 </template>
