@@ -19,6 +19,10 @@ Template.form_new_post.events({
       title: titleVal,
       text: textVal,
       createdAt: new Date(),
+      // eslint-disable-next-line no-undef
+      auteurID: Meteor.userId(),
+      // eslint-disable-next-line no-undef
+      auteurMail: Meteor.user().emails[0].address,
     });
 
 
