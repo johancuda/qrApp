@@ -17,12 +17,18 @@ Template.form_new_post.events({
 
     Posts.insert({
       title: titleVal,
-      texte: textVal,
+      text: textVal,
       createdAt: new Date(),
     });
 
 
     event.target.title.value = '';
     event.target.text.value = '';
+  },
+});
+
+Template.list_post.helpers({
+  posts() {
+    return Posts.find().fetch();
   },
 });

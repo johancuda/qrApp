@@ -3,11 +3,14 @@
 </head>
 
 <body>
-  <h1>Welcome to Meteor!</h1>
+  <h1>App currently loading...</h1>
+  <hr>
   {{> form_new_post}}
+  <hr>
+  {{>list_post}}
 </body>
 
-
+<!--Template qui crée un post dans un formulaire-->
 <template name="form_new_post">
 <div class="container">
   <form class="js-new-post">
@@ -16,4 +19,26 @@
     <button class = "btn btn-primary" type="submit" name="bouton"> Poster</button>
   </form>
 </div>
+</template>
+<!-- permet d'afficher les posts en attendant d'avoir le routing -->
+<template name="list_post">
+  <h2>Les Posts</h2>
+  <div class="card-columns">
+{{#each post in posts}}
+<!--on crée la variable post pour être utilisée dans le temlate single_post-->
+ {{>single_post post=post}}
+{{/each}}
+</div>
+</template>
+
+<template name="single_post">
+
+  <div class="card w-1" >
+    <h5 class="card-header">{{post.title}}</h5>
+    <div class="card-body">
+      <p class="card-text" style="white-space:pre">{{post.text}}</p>
+      <div class="card-footer"> {{post.createdAt}}</div>
+    </div>
+  </div>
+
 </template>
