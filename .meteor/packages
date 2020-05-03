@@ -25,3 +25,5 @@ msavin:mongol
 accounts-password@1.6.0
 useraccounts:bootstrap
 ostrio:flow-router-extra
+gaetanrouzies:bootstrap-4-modal
+hitchcott:qr-scanner
