@@ -34,7 +34,6 @@ es5-shim@4.8.0
 fetch@0.1.1
 gaetanrouzies:bootstrap-4-modal@0.0.6
 geojson-utils@1.0.10
-hitchcott:qr-scanner@1.0.4
 hot-code-push@1.0.4
 html-tools@1.0.11
 htmljs@1.0.11
@@ -67,7 +66,6 @@ npm-bcrypt@0.9.3
 npm-mongo@3.7.0
 observe-sequence@1.0.16
 ordered-dict@1.1.0
-ostrio:flow-router-extra@3.7.4
 promise@0.11.2
 random@1.2.0
 rate-limit@1.0.9
