@@ -25,3 +25,6 @@ msavin:mongol
 accounts-password@1.6.0
 useraccounts:bootstrap
 gaetanrouzies:bootstrap-4-modal
+hitchcott:qr-scanner
+kadira:flow-router
+kadira:blaze-layout
