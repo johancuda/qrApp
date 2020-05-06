@@ -24,6 +24,7 @@ insecure@1.0.7                # Allow all DB writes from clients (for prototypin
 msavin:mongol
 accounts-password@1.6.0
 useraccounts:bootstrap
-ostrio:flow-router-extra
 gaetanrouzies:bootstrap-4-modal
 hitchcott:qr-scanner
+kadira:flow-router
+kadira:blaze-layout
