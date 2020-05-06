@@ -2,9 +2,9 @@ import { Template } from 'meteor/templating';
 
 import { FlowRouter } from 'meteor/kadira:flow-router';
 
-import '../templates/test.html';
+import '../templates/postPage.html';
 
-Template.test.events({
+Template.post.events({
   'click #retour' (event) {
     event.preventDefault();
     FlowRouter.go('connexion');

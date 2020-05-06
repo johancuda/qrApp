@@ -14,8 +14,8 @@ import './templates/listPost.html';
 import './templates/singlePost.html';
 import './body.html';
 import './templates/connexion.html';
-import './templates/test.html';
-import './scripts/test.js';
+import './templates/postPage.html';
+import './scripts/postPage.js';
 import '../../lib/routes.js';
 
 // bouton déconnexion:
@@ -26,10 +26,17 @@ Template.accueil.events({
   },
 });
 
-// test de routing
+// route pour faire un post
 Template.appBody.events({
-  'click #test'(event) {
+  'click #post'(event) {
     event.preventDefault();
-    FlowRouter.go('test');
+    FlowRouter.go('post');
+  },
+});
+// route qui renvoie aux posts après avoir poster
+Template.appBody.events({
+  'submit #form' (event) {
+    event.preventDefault();
+    FlowRouter.go('connexion');
   },
 });
