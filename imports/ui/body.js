@@ -18,6 +18,11 @@ import './templates/postPage.html';
 import './scripts/postPage.js';
 import '../../lib/routes.js';
 
+import './templates/listNotif.html';
+import './templates/settings.html';
+import './templates/profileStat.html';
+
+
 // bouton déconnexion:
 Template.accueil.events({
   // eslint-disable-next-line no-unused-vars
