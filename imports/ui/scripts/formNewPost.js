@@ -40,7 +40,6 @@ Template.formNewPost.events({
   'click #bouton'(event) {
     event.preventDefault();
     Swal.fire({
-      heightAuto: false,
       title: 'Are you sure?',
       text: "You won't be able to revert this!",
       icon: 'warning',
