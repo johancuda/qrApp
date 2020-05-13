@@ -1,5 +1,5 @@
 <template name="single_post">
-
+    <!-- Post version : 01 -->
     <div class="card w-1" >
       <h5 class="card-header">{{post.title}}</h5>
       <div class="card-body">
@@ -7,5 +7,24 @@
         <div class="card-footer">{{post.createdAt}} Posté par {{post.auteurMail}}</div>
       </div>
     </div>
-  
-  </template>
+
+    <!-- Post version : 02 -->
+    <div class="card w-1" >
+      <h5 class="card-header">                  
+       <div class="row align-items-center">
+        <div class="col-auto">
+            <div>
+                <span class="avatar bg-warning text-white rounded-circle">NL</span>
+            </div>
+        </div>
+        <div class="col ml-md-n2">
+          <a href="#!" class="d-block h6 mb-0">{{post.auteurMail}}</a>
+          <small class="float-right text-muted">{{post.createdAt}}</small>
+        </div>
+       </div>
+      </h5>
+      <div class="card-body">
+        <p class="card-text" style="white-space:pre">{{post.text}}</p>
+      </div>
+    </div>
+</template>
