@@ -4,40 +4,34 @@ import Swal from 'sweetalert2';
 
 import { Template } from 'meteor/templating';
 
-import { Meteor } from 'meteor/meteor';
+import { FlowRouter } from 'meteor/kadira:flow-router';
 
-import { Posts } from '../../api/collections.js';
+import { Towers } from '../../api/towers.js';
 
-import '../templates/formNewPost.html';
+import '../templates/formNewTower.html';
 
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-Template.formNewPost.events({
+Template.formNewTower.events({
   // eslint-disable-next-line no-unused-vars
-  'submit .js-new-post' (event, templateInstance) {
+  'submit .js-new-tower' (event, templateInstance) {
     event.preventDefault();
     const titleVal = event.target.title.value;
-    const textVal = event.target.text.value;
 
-    Posts.insert({
+    Towers.insert({
       title: titleVal,
-      text: textVal,
       createdAt: new Date(),
 
-      auteurID: Meteor.userId(),
-
-      auteurMail: Meteor.user().emails[0].address,
     });
 
 
     event.target.title.value = '';
-    event.target.text.value = '';
   },
 });
 
-Template.formNewPost.events({
-  'click #bouton'(event) {
+Template.formNewTower.events({
+  'click #bouton2'(event) {
     event.preventDefault();
     Swal.fire({
       heightAuto: false,
@@ -50,7 +44,7 @@ Template.formNewPost.events({
       confirmButtonText: 'Yes, post it!',
     }).then((result) => {
       if (result.value) {
-        $('form#form').submit();
+        $('form#form2').submit();
         Swal.fire(
           'Posted!',
           'Your file has been posted.',
@@ -58,5 +52,12 @@ Template.formNewPost.events({
         );
       }
     });
+  },
+});
+
+Template.formNewTower.events({
+  'click #retour' (event) {
+    event.preventDefault();
+    FlowRouter.go('connexion');
   },
 });
