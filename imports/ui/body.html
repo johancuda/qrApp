@@ -1,8 +1,56 @@
 <template name="appBody">
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand">QR code reading</a>
-    <span class ="navbar-test navbar-light bg-light"> L'app est en cours de création</span>
+  <!-- Content -->
+<div class="main-content position-relative">
+  <!-- Main nav -->
+  <nav class="navbar navbar-main navbar-expand-lg navbar-dark bg-primary navbar-border" id="navbar-main">
+    <div class="container-fluid">
+      <!-- Brand + Toggler (for mobile devices) -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-main-collapse" aria-controls="navbar-main-collapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- Navbar nav -->
+      <div class="collapse navbar-collapse navbar-collapse-fade" id="navbar-main-collapse">
+      <ul class="navbar-nav align-items-lg-center">
+        <!-- Main function  -->
+        <li class="nav-item d-lg-none ">
+            <a class="nav-link" href="">
+            Decode
+            </a>
+        </li>
+        <li class="border-top opacity-2 my-2"></li>
+        <!-- Lists  -->
+        <li class="nav-item d-lg-none">
+            <a class="nav-link" href="">
+            Find towers
+            </a>
+        </li>
+        <li class="nav-item d-lg-none">
+            <a class="nav-link" href="">
+            Subscriptions
+            </a>
+        </li>
+        <li class="nav-item d-lg-none">
+            <a class="nav-link" href="">
+            Favorite stations
+            </a>
+        </li>
+        <li class="border-top opacity-2 my-2"></li>
+        <!-- Options -->
+        <li class="nav-item d-lg-none">
+            <a class="nav-link" href="">
+            Settings
+            </a>
+        </li>
+        <li class="nav-item d-lg-none">
+            <a class="nav-link" href="">
+            Log out
+            </a>
+        </li>
+      </ul>
+      </div>
+    </div>
   </nav>
+</div>
   
   
   {{> Template.dynamic template=main}}
