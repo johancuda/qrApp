@@ -39,7 +39,7 @@ Template.accueil.events({
 Template.appBody.events({
   'click #post'(event) {
     event.preventDefault();
-    FlowRouter.go('post');
+    FlowRouter.go('post', { IdTower: window.location.pathname });
   },
 });
 // route qui renvoie aux posts après avoir poster
@@ -54,5 +54,12 @@ Template.appBody.events({
   'click #tower' (event) {
     event.preventDefault();
     FlowRouter.go('tower');
+  },
+});
+
+Template.appBody.events({
+  'click .profile' (event) {
+    event.preventDefault();
+    FlowRouter.go('profile', { id: this.auteurID });
   },
 });

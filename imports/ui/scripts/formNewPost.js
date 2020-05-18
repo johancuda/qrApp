@@ -28,6 +28,8 @@ Template.formNewPost.events({
       auteurID: Meteor.userId(),
 
       auteurMail: Meteor.user().emails[0].address,
+
+      towerID: window.location.pathname,
     });
 
 

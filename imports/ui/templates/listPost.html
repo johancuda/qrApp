@@ -4,8 +4,10 @@
     <h2>Broadcast</h2>
     <div class="card-columns">
   {{#each post in posts}}
+      
   <!--on crée la variable post pour être utilisée dans le temlate single_post-->
-   {{>single_post post=post}}
+      {{>single_post post=post}}
+
   {{/each}}
   </div>
   <button id="post" class="btn btn-primary btn-lg mx-auto rounded-pill">Add new post</button>
