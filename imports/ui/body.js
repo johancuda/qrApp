@@ -55,7 +55,7 @@ Template.appBody.events({
 Template.appBody.events({
   'click #tower' (event) {
     event.preventDefault();
-    FlowRouter.go('tower');
+    FlowRouter.go('tower', { id: window.location.pathname.slice(1) });
   },
 });
 

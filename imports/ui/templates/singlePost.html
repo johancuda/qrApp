@@ -1,5 +1,6 @@
+
 <template name="single_post">
-    <!-- Post version : 01 -->
+   <!-- 
     <div class="card w-1" >
       <h5 class="card-header">{{post.title}}</h5>
       <div class="card-body">
@@ -9,7 +10,7 @@
         </div>
       </div>
     </div>
-
+       -->
     <!-- Post version : 02 -->
     <div class="card w-1" >
       <h5 class="card-header">                  
@@ -20,7 +21,8 @@
             </div>
         </div>
         <div class="col ml-md-n2">
-          <a href="#!" class="d-block h6 mb-0">{{post.auteurMail}}</a>
+          <a class="d-block h6 mb-0">{{post.title}}</a>
+          <a href="" class="d-block h6 mb-0 profile">{{post.auteurMail}}</a>
           <small class="float-right text-muted">{{post.createdAt}}</small>
         </div>
        </div>

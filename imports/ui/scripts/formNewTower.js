@@ -58,6 +58,7 @@ Template.formNewTower.events({
 Template.formNewTower.events({
   'click #retour' (event) {
     event.preventDefault();
-    FlowRouter.go('connexion');
+    const url = window.location.pathname.slice(7);
+    FlowRouter.go('connexion', { id: url });
   },
 });

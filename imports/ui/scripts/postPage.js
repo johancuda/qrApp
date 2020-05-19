@@ -7,6 +7,7 @@ import '../templates/postPage.html';
 Template.post.events({
   'click #retour' (event) {
     event.preventDefault();
-    FlowRouter.go('connexion');
+    const url = window.location.pathname.slice(6);
+    FlowRouter.go('connexion', { id: url });
   },
 });
