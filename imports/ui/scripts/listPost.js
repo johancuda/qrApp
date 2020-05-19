@@ -13,7 +13,6 @@ Template.listPost.helpers({
   title() {
     let idTower = window.location.pathname;
     idTower = idTower.slice(1);
-    console.log(Towers.findOne({ _id: idTower }));
     return Towers.findOne({ _id: idTower });
   },
 });
