@@ -27,3 +27,6 @@ gaetanrouzies:bootstrap-4-modal
 kadira:flow-router
 kadira:blaze-layout
 accounts-ui
+
+accounts-base
+session

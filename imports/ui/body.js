@@ -1,9 +1,11 @@
+/* eslint-disable meteor/no-session */
 import { Template } from 'meteor/templating';
 
 import { Meteor } from 'meteor/meteor';
 
 import { FlowRouter } from 'meteor/kadira:flow-router';
 
+import { Session } from 'meteor/session';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import './templates/accueil.html';
@@ -39,7 +41,7 @@ Template.accueil.events({
 Template.appBody.events({
   'click #post'(event) {
     event.preventDefault();
-    FlowRouter.go('post', { IdTower: window.location.pathname });
+    FlowRouter.go('post', { IdTower: window.location.pathname.slice(1) });
   },
 });
 // route qui renvoie aux posts après avoir poster
@@ -60,6 +62,10 @@ Template.appBody.events({
 Template.appBody.events({
   'click .profile' (event) {
     event.preventDefault();
-    FlowRouter.go('profile', { id: this.auteurID });
+    Session.set({
+      id: this.post.auteurID,
+      mail: this.post.auteurMail,
+    });
+    FlowRouter.go('profile', { id: this.post.auteurID });
   },
 });

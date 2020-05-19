@@ -6,7 +6,9 @@ import { Template } from 'meteor/templating';
 
 import { Meteor } from 'meteor/meteor';
 
+
 import { Posts } from '../../api/collections.js';
+
 
 import '../templates/formNewPost.html';
 
@@ -29,7 +31,7 @@ Template.formNewPost.events({
 
       auteurMail: Meteor.user().emails[0].address,
 
-      towerID: window.location.pathname,
+      towerID: window.location.pathname.slice(6),
     });
 
 
