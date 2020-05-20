@@ -11,7 +11,6 @@ Template.otherUser.events({
   'click #retour' (event) {
     event.preventDefault();
     const tower = Session.get('tower');
-    console.log(tower);
     FlowRouter.go('connexion', { id: tower });
   },
 });
