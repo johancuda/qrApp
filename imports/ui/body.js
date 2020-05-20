@@ -41,14 +41,15 @@ Template.accueil.events({
 Template.appBody.events({
   'click #post'(event) {
     event.preventDefault();
-    FlowRouter.go('post', { IdTower: window.location.pathname.slice(1) });
+    const url = FlowRouter.getParam('id');
+    FlowRouter.go('post', { IdTower: url });
   },
 });
 // route qui renvoie aux posts après avoir poster
 Template.appBody.events({
   'submit #form' (event) {
     event.preventDefault();
-    const url = window.location.pathname.slice(6);
+    const url = FlowRouter.getParam('id');
     FlowRouter.go('connexion', { id: url });
   },
 });
@@ -56,7 +57,7 @@ Template.appBody.events({
 Template.appBody.events({
   'submit #form2' (event) {
     event.preventDefault();
-    const url = window.location.pathname.slice(7);
+    const url = FlowRouter.getParam('id');
     FlowRouter.go('connexion', { id: url });
   },
 });
@@ -64,7 +65,8 @@ Template.appBody.events({
 Template.appBody.events({
   'click #tower' (event) {
     event.preventDefault();
-    FlowRouter.go('tower', { id: window.location.pathname.slice(1) });
+    const url = FlowRouter.getParam('id');
+    FlowRouter.go('tower', { id: url });
   },
 });
 

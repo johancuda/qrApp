@@ -6,7 +6,7 @@ import { Template } from 'meteor/templating';
 
 import { Meteor } from 'meteor/meteor';
 
-
+import { FlowRouter } from 'meteor/kadira:flow-router';
 import { Posts } from '../../api/collections.js';
 
 
@@ -31,7 +31,7 @@ Template.formNewPost.events({
 
       auteurMail: Meteor.user().emails[0].address,
 
-      towerID: window.location.pathname.slice(6),
+      towerId: FlowRouter.getParam('id'),
     });
 
 

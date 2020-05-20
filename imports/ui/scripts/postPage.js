@@ -7,7 +7,7 @@ import '../templates/postPage.html';
 Template.post.events({
   'click #retour' (event) {
     event.preventDefault();
-    const url = window.location.pathname.slice(6);
+    const url = FlowRouter.getParam('IdTower');
     FlowRouter.go('connexion', { id: url });
   },
 });
