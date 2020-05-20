@@ -10,7 +10,9 @@ import { Session } from 'meteor/session';
 Template.otherUser.events({
   'click #retour' (event) {
     event.preventDefault();
-    FlowRouter.go('connexion');
+    const tower = Session.get('tower');
+    console.log(tower);
+    FlowRouter.go('connexion', { id: tower });
   },
 });
 

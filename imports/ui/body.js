@@ -48,7 +48,16 @@ Template.appBody.events({
 Template.appBody.events({
   'submit #form' (event) {
     event.preventDefault();
-    FlowRouter.go('connexion');
+    const url = window.location.pathname.slice(6);
+    FlowRouter.go('connexion', { id: url });
+  },
+});
+
+Template.appBody.events({
+  'submit #form2' (event) {
+    event.preventDefault();
+    const url = window.location.pathname.slice(7);
+    FlowRouter.go('connexion', { id: url });
   },
 });
 
@@ -65,6 +74,7 @@ Template.appBody.events({
     Session.set({
       id: this.post.auteurID,
       mail: this.post.auteurMail,
+      tower: this.post.towerID,
     });
     FlowRouter.go('profile', { id: this.post.auteurID });
   },
