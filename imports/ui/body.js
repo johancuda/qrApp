@@ -29,6 +29,10 @@ import './templates/otherUser.html';
 import './scripts/otherUser.js';
 import './templates/formNewTower.html';
 import './scripts/formNewTower.js';
+import './templates/historique.html';
+import './scripts/historique.js';
+import './templates/qrCode.html';
+import './scripts/qrCode.js';
 // bouton déconnexion:
 Template.accueil.events({
   // eslint-disable-next-line no-unused-vars
