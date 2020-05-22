@@ -33,6 +33,12 @@ import './templates/historique.html';
 import './scripts/historique.js';
 import './templates/qrCode.html';
 import './scripts/qrCode.js';
+
+import './templates/newAccount.html';
+import './scripts/newAccount.js';
+import './templates/formConnexion.html';
+import './scripts/formConnexion.js';
+
 // bouton déconnexion:
 Template.accueil.events({
   // eslint-disable-next-line no-unused-vars
