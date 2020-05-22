@@ -3,9 +3,9 @@ import { Template } from 'meteor/templating';
 
 import '../templates/qrCode.html';
 
-import { QRCode } from 'davidshimjs-qrcodejs';
-// import { QRCode } from '../../api/qrcode.min.js';
+import QRCode from 'davidshimjs-qrcodejs';
 
-Template.qrCode.onCreated(function() {
-  return new QRCode(document.getElementById('qrcode'), 'http://jindo.dev.naver.com/collie');
+Template.qrCode.onRendered(function() {
+  const qr = new QRCode(document.getElementById('qrcode'), 'http://jindo.dev.naver.com/collie');
+  return qr;
 });
