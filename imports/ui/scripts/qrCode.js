@@ -6,8 +6,12 @@ import '../templates/qrCode.html';
 
 import QRCode from 'davidshimjs-qrcodejs';
 
+import { FlowRouter } from 'meteor/kadira:flow-router';
+
 Template.qrCode.onRendered(function() {
-  const qr = new QRCode(document.getElementById('qrcode'), 'http://jindo.dev.naver.com/collie');
+  let url = FlowRouter.current().path;
+  url = `${'172.20.10.11:3000'}${url}`;
+  const qr = new QRCode(document.getElementById('qrcode'), url);
 });
 
 /* Template.qrCode.events({
