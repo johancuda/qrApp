@@ -11,7 +11,7 @@ import { Towers } from '../../api/towers.js';
 Template.listPost.helpers({
   posts() {
     const id = FlowRouter.getParam('id');
-    return Posts.find({ towerID: id }).fetch();
+    return Posts.find({ towerId: id }).fetch();
   },
   title() {
     const idTower = FlowRouter.getParam('id');

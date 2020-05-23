@@ -3,6 +3,7 @@
     {{#if currentUser}}
         {{> accueil}}
     {{else}}
-        <p>Vous pouvez vous connecter avec bla@bla.ch / 123456, ou faire un nouveau compte, mettons le même mot de passe partout pour l'instant :)</p>
+        {{> formConnexion}}
+        <!--{{> newAccount}}-->
     {{/if}}
 </template>

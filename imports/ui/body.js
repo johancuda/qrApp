@@ -33,6 +33,12 @@ import './templates/historique.html';
 import './scripts/historique.js';
 import './templates/qrCode.html';
 import './scripts/qrCode.js';
+
+import './templates/newAccount.html';
+import './scripts/newAccount.js';
+import './templates/formConnexion.html';
+import './scripts/formConnexion.js';
+
 // bouton déconnexion:
 Template.accueil.events({
   // eslint-disable-next-line no-unused-vars
@@ -53,7 +59,7 @@ Template.appBody.events({
 Template.appBody.events({
   'submit #form' (event) {
     event.preventDefault();
-    const url = FlowRouter.getParam('id');
+    const url = FlowRouter.getParam('IdTower');
     FlowRouter.go('connexion', { id: url });
   },
 });
@@ -83,5 +89,21 @@ Template.appBody.events({
       tower: this.post.towerID,
     });
     FlowRouter.go('profile', { id: this.post.auteurID });
+  },
+});
+
+Template.appBody.events({
+  'click #connexion'(event) {
+    event.preventDefault();
+    const url = FlowRouter.getParam('id');
+    FlowRouter.go('connexion', { id: url });
+  },
+});
+
+Template.appBody.events({
+  'click #new'(event) {
+    event.preventDefault();
+    const url = FlowRouter.getParam('id');
+    FlowRouter.go('newAccount', { id: url });
   },
 });

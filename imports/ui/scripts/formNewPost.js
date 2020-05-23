@@ -31,7 +31,7 @@ Template.formNewPost.events({
 
       auteurMail: Meteor.user().emails[0].address,
 
-      towerId: FlowRouter.getParam('id'),
+      towerId: FlowRouter.getParam('IdTower'),
     });
 
 
