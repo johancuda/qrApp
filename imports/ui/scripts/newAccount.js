@@ -5,6 +5,7 @@ import { Template } from 'meteor/templating';
 Template.newAccount.events({
   'click #creation'(event) {
     event.preventDefault();
-    FlowRouter.go('connexion');
+    const url = FlowRouter.getParam('id');
+    FlowRouter.go('connexion', { id: url });
   },
 });
