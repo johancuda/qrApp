@@ -1,4 +1,5 @@
 /* eslint-disable meteor/no-session */
+/* eslint-env jquery */
 import { Template } from 'meteor/templating';
 
 import { Meteor } from 'meteor/meteor';
