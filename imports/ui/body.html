@@ -39,11 +39,19 @@
             Profile
             </a>
         </li>
+        {{#if currentUser}}
         <li class="nav-item">
             <a class="nav-link js-logout" href="">
             Log out
             </a>
         </li>
+        {{else}}
+        <li class="nav-item">
+            <a class="nav-link" id="connexion" href="">
+            Log in
+            </a>
+        </li>
+        {{/if}}
         <li class="nav-item">
           <a class="nav-link text-secondary" href="">
           Connected as {{utilisateur}}
