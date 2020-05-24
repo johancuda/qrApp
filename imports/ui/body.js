@@ -44,6 +44,8 @@ import './templates/start.html';
 import './scripts/start.js';
 import './templates/listTowers.html';
 import './scripts/listTowers.js';
+import './templates/currentUserProfile.html';
+import './scripts/currentUserProfile.js';
 
 // bouton déconnexion:
 Template.accueil.events({
@@ -151,6 +153,23 @@ Template.appBody.events({
 
 Template.appBody.helpers({
   initials() {
-    return Meteor.user().emails[0].address.charAt(0);
+    const mail = Meteor.user().emails[0].address;
+    return mail.charAt(0);
+  },
+});
+
+Template.appBody.events({
+  'click #postPage' (event) {
+    event.preventDefault();
+    const url = FlowRouter.getParam('id');
+    FlowRouter.go('connexion', { id: url });
+  },
+});
+
+Template.appBody.events({
+  'click .userProfile' (event) {
+    event.preventDefault();
+    const url = FlowRouter.getParam('id');
+    FlowRouter.go('userProfile', { id: url });
   },
 });
