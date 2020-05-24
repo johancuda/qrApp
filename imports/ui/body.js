@@ -42,6 +42,8 @@ import './templates/formConnexion.html';
 import './scripts/formConnexion.js';
 import './templates/start.html';
 import './scripts/start.js';
+import './templates/listTowers.html';
+import './scripts/listTowers.js';
 
 // bouton déconnexion:
 Template.accueil.events({
@@ -128,5 +130,27 @@ Template.appBody.events({
     event.preventDefault();
     const url = event.target.innerHTML;
     FlowRouter.go('connexion', { id: url });
+  },
+});
+
+Template.appBody.events({
+  'click .history' (event) {
+    event.preventDefault();
+    const url = FlowRouter.getParam('id');
+    FlowRouter.go('historique', { id: url });
+  },
+});
+
+Template.appBody.events({
+  'click .listTowers' (event) {
+    event.preventDefault();
+    const url = FlowRouter.getParam('id');
+    FlowRouter.go('listTowers', { id: url });
+  },
+});
+
+Template.appBody.helpers({
+  initials() {
+    return Meteor.user().emails[0].address.charAt(0);
   },
 });

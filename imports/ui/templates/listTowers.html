@@ -1,0 +1,11 @@
+<template name="listTowers">
+    <div>
+        <ul>
+            <h1>Liste des towers</h1>
+            {{#each tower in towers}}
+            <li>{{tower.title}} - location : unknowned</li>
+            {{/each}}
+        </ul>
+    </div>
+    <button id="retour" class="btn btn-secondary">Retour</button>
+</template>

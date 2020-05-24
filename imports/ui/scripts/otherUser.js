@@ -26,4 +26,7 @@ Template.otherUser.helpers({
     const posts = Posts.find({ auteurID: auteur }).fetch();
     return posts.length;
   },
+  getInitials() {
+    return Session.get('mail').charAt(0);
+  },
 });
