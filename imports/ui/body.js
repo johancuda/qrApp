@@ -7,6 +7,7 @@ import { Meteor } from 'meteor/meteor';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 
 import { Session } from 'meteor/session';
+import '../../client/css/purpose.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import './templates/accueil.html';
