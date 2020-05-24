@@ -94,7 +94,7 @@ Template.appBody.events({
     Session.set({
       id: this.post.auteurID,
       mail: this.post.auteurMail,
-      tower: this.post.towerID,
+      tower: this.post.towerId,
     });
     FlowRouter.go('profile', { id: this.post.auteurID });
   },

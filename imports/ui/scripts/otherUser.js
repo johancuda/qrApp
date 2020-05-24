@@ -7,6 +7,8 @@ import '../templates/otherUser.html';
 
 import { Session } from 'meteor/session';
 
+import { Posts } from '../../api/collections.js';
+
 Template.otherUser.events({
   'click #retour' (event) {
     event.preventDefault();
@@ -18,5 +20,10 @@ Template.otherUser.events({
 Template.otherUser.helpers({
   getMail() {
     return Session.get('mail').slice(0, -8);
+  },
+  number() {
+    const auteur = Session.get('id');
+    const posts = Posts.find({ auteurID: auteur }).fetch();
+    return posts.length;
   },
 });
