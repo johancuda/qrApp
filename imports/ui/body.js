@@ -66,6 +66,12 @@ Template.appBody.events({
     const url = FlowRouter.getParam('IdTower');
     FlowRouter.go('connexion', { id: url });
   },
+  // et pour déco
+  // eslint-disable-next-line no-unused-vars
+  'click .js-logout'(event, templateInstance) {
+    event.preventDefault();
+    Meteor.logout();
+  },
 });
 
 // helper qui affiche le nom de l'utilisateur connecté
