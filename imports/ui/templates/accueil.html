@@ -1,5 +1,9 @@
 <!--Template de ce que voit l'utilisateur une fois connecté-->
 <template name="accueil">
+    <!-- ces deux trucs concernant la connexion sont là en attendant la navbar-->
+    Connecté comme {{utilisateur}}
+    <button class='js-logout'>Se déconnecter</button>
+    
     <hr>
     {{>listPost}}
     <hr>

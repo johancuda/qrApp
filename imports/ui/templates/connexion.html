@@ -1,9 +1,7 @@
 <template name="connexion">
-    {{> loginButtons}}
     {{#if currentUser}}
         {{> accueil}}
     {{else}}
         {{> formConnexion}}
-        <!--{{> newAccount}}-->
     {{/if}}
 </template>

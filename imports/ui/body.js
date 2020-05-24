@@ -65,6 +65,11 @@ Template.appBody.events({
   },
 });
 
+// helper qui affiche le nom de l'utilisateur connecté
+Template.accueil.helpers({
+  utilisateur: () => Meteor.user().username,
+});
+
 Template.appBody.events({
   'submit #form2' (event) {
     event.preventDefault();
