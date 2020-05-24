@@ -1,0 +1,36 @@
+
+<template name="postHistorique">
+    <!-- 
+     <div class="card w-1" >
+       <h5 class="card-header">{{post.title}}</h5>
+       <div class="card-body">
+         <p class="card-text" style="white-space:pre">{{post.text}}</p>
+         <div class="card-footer">{{post.createdAt}} Posté par 
+           <a href="" class ="profile" >{{post.auteurMail}} </a>
+         </div>
+       </div>
+     </div>
+        -->
+     <!-- Post version : 02 -->
+     <div class="card w-1" >
+       <h5 class="card-header">                  
+        <div class="row align-items-center">
+         <div class="col-auto">
+             <div>
+                 <span class="avatar bg-warning text-white rounded-circle">{{initials}}</span>
+             </div>
+         </div>
+         <div class="col ml-md-n2">
+           <a class="d-block h6 mb-0">{{post.title}}</a>
+           <a href="" class="d-block h6 mb-0 profile">{{post.auteurMail}}</a>
+           <small class="float-right text-muted">{{post.createdAt}}</small>
+         </div>
+        </div>
+       </h5>
+       <div class="card-body">
+         <p class="card-text" style="white-space:pre">{{post.text}}</p>
+         <small class="float-right text-muted">Posted at {{towerName}}</small>
+       </div>
+     </div>
+ </template>
+ 

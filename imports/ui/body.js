@@ -47,6 +47,8 @@ import './scripts/listTowers.js';
 import './templates/currentUserProfile.html';
 import './scripts/currentUserProfile.js';
 import './scripts/singlePost.js';
+import './templates/postHistorique.html';
+import './scripts/postHistorique.js';
 
 // bouton déconnexion:
 Template.accueil.events({
