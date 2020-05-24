@@ -11,8 +11,6 @@ import { Towers } from '../../api/towers.js';
 import '../templates/formNewTower.html';
 
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-
 Template.formNewTower.events({
   // eslint-disable-next-line no-unused-vars
   'submit .js-new-tower' (event, templateInstance) {

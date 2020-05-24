@@ -12,9 +12,6 @@ import { Posts } from '../../api/collections.js';
 
 import '../templates/formNewPost.html';
 
-
-import 'bootstrap/dist/css/bootstrap.min.css';
-
 Template.formNewPost.events({
   // eslint-disable-next-line no-unused-vars
   'submit .js-new-post' (event, templateInstance) {
