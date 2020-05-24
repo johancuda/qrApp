@@ -23,6 +23,11 @@ Template.currentUserProfile.helpers({
     const posts = Posts.find({ auteurID: auteur }).fetch();
     return posts.length;
   },
+  numberTowers() {
+    const auteur = Meteor.userId();
+    const publications = Posts.find({ auteurID: auteur }).fetch();
+    return publications.length;
+  },
 });
 
 Template.currentUserProfile.events({

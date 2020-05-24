@@ -20,5 +20,5 @@ Template.start.onRendered(function() {
         createdAt: new Date(),
       });
     }
-  }, 500);
+  }, 1000);
 });

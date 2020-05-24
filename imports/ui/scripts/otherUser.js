@@ -29,4 +29,9 @@ Template.otherUser.helpers({
   getInitials() {
     return Session.get('mail').charAt(0);
   },
+  numberTowers() {
+    const auteur = Session.get('id');
+    const publications = Posts.find({ auteurID: auteur }).fetch();
+    return publications.length;
+  },
 });
