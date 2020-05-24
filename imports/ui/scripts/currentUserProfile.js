@@ -12,7 +12,6 @@ import { Posts } from '../../api/collections.js';
 Template.currentUserProfile.helpers({
   mail() {
     const adresse = Meteor.user().emails[0].address;
-    console.log(adresse);
     return adresse.slice(0, -8);
   },
   initials() {
