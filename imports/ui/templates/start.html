@@ -1,0 +1,10 @@
+<template name="start">
+    <div>
+        <ul>
+            <h1>Liste des towers disponibles</h1>
+            {{#each tower in towers}}
+            <li>{{tower.title}} - <a href="" class="lien">{{tower._id}}</a></li>
+            {{/each}}
+        </ul>
+    </div>
+</template>

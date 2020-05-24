@@ -39,6 +39,8 @@ import './templates/newAccount.html';
 import './scripts/newAccount.js';
 import './templates/formConnexion.html';
 import './scripts/formConnexion.js';
+import './templates/start.html';
+import './scripts/start.js';
 
 // bouton déconnexion:
 Template.accueil.events({
@@ -111,5 +113,13 @@ Template.appBody.events({
     event.preventDefault();
     const url = FlowRouter.getParam('id');
     FlowRouter.go('newAccount', { id: url });
+  },
+});
+
+Template.appBody.events({
+  'click .lien' (event) {
+    event.preventDefault();
+    const url = event.target.innerHTML;
+    FlowRouter.go('connexion', { id: url });
   },
 });
