@@ -10,20 +10,17 @@ import { Template } from 'meteor/templating';
 
 import { Notifications } from '../../api/notifications.js';
 
-// pas fini ici, rajouter conditions sur les notifs : pas du currentUser, date minimum etc...
 Template.listNotif.helpers({
   notifs() {
     let towers = Meteor.user({ fields: { 'profile.towers': 1 } });
     towers = towers.profile.towers;
     let tableau = [];
     for (let i = 0; i < towers.length; i++) tableau = tableau.concat(Notifications.find({ towerId: towers[i] }).fetch());
-    console.log(tableau);
     for (let j = 0; j < tableau.length; j++) {
       if (tableau[j].auteurID === Meteor.userId()) {
         tableau.splice(j, 1);
       }
     }
-    console.log(tableau);
     return tableau;
   },
 });

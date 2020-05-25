@@ -10,4 +10,9 @@ Template.singleNotif.helpers({
     const name = Towers.find({ _id: tower }).fetch();
     return name[0].title;
   },
+  initials() {
+    const tower = this.notif.towerId;
+    const name = Towers.find({ _id: tower }).fetch();
+    return name[0].title.charAt(0);
+  },
 });
