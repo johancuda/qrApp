@@ -11,7 +11,7 @@ import { Towers } from '../../api/towers.js';
 import '../templates/formNewTower.html';
 
 
-Template.formNewTower.events({
+/* Template.formNewTower.events({
   // eslint-disable-next-line no-unused-vars
   'submit .js-new-tower' (event, templateInstance) {
     event.preventDefault();
@@ -26,7 +26,7 @@ Template.formNewTower.events({
 
     event.target.title.value = '';
   },
-});
+}); */
 
 Template.formNewTower.events({
   'click #bouton2'(event) {
@@ -42,12 +42,14 @@ Template.formNewTower.events({
       confirmButtonText: 'Yes, post it!',
     }).then((result) => {
       if (result.value) {
-        $('form#form2').submit();
-        Swal.fire(
-          'Posted!',
-          'Your file has been posted.',
-          'success',
-        );
+        const titleVal = document.getElementById('towerName').value;
+        Towers.insert({
+          title: titleVal,
+          createdAt: new Date(),
+        });
+        document.getElementById('towerName').innerHTML = '';
+        FlowRouter.go('connexion', { id: FlowRouter.getParam('id') });
+        Swal.fire('Posted!', 'Your file has been posted.', 'success');
       }
     });
   },
