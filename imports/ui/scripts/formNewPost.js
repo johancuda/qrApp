@@ -43,7 +43,12 @@ Template.formNewPost.events({
 
           towerId: FlowRouter.getParam('IdTower'),
         });
-
+        Notifications.insert({
+          titile: 'new post',
+          createdAt: new Date(),
+          auteurID: Meteor.userId(),
+          towerId: FlowRouter.getParam('IdTower'),
+        });
         title.value = '';
         text.value = '';
         FlowRouter.go('connexion', { id: FlowRouter.getParam('IdTower') });

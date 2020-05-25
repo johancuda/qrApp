@@ -2,6 +2,8 @@
 /* eslint-disable no-plusplus */
 import '../templates/listNotif.html';
 
+import { FlowRouter } from 'meteor/kadira:flow-router';
+
 import { Meteor } from 'meteor/meteor';
 
 import { Template } from 'meteor/templating';
@@ -15,14 +17,21 @@ Template.listNotif.helpers({
     towers = towers.profile.towers;
     let tableau = [];
     for (let i = 0; i < towers.length; i++) tableau = tableau.concat(Notifications.find({ towerId: towers[i] }).fetch());
+    console.log(tableau);
+    for (let j = 0; j < tableau.length; j++) {
+      if (tableau[j].auteurID === Meteor.userId()) {
+        tableau.splice(j, 1);
+      }
+    }
+    console.log(tableau);
     return tableau;
   },
 });
 
 Template.listNotif.events({
-    'click #retour' (event) {
-      event.preventDefault();
-      const url = FlowRouter.getParam('id');
-      FlowRouter.go('connexion', { id: url });
-    },
-  });
+  'click #retour' (event) {
+    event.preventDefault();
+    const url = FlowRouter.getParam('id');
+    FlowRouter.go('connexion', { id: url });
+  },
+});
