@@ -9,6 +9,7 @@ import { FlowRouter } from 'meteor/kadira:flow-router';
 import { Session } from 'meteor/session';
 import '../../client/css/purpose.css';
 
+import './templates/header.html';
 
 import './templates/accueil.html';
 import './scripts/formNewPost.js';
@@ -154,7 +155,14 @@ Template.appBody.events({
 Template.appBody.helpers({
   initials() {
     const mail = Meteor.user().emails[0].address;
-    return mail.charAt(0);
+    return mail.charAt(0).toUpperCase() + mail.split('.')[1].charAt(0).toUpperCase();
+  },
+});
+
+Template.header.helpers({
+  initials() {
+    const mail = Meteor.user().emails[0].address;
+    return mail.charAt(0).toUpperCase() + mail.split('.')[1].charAt(0).toUpperCase();
   },
 });
 

@@ -13,11 +13,11 @@ Template.currentUserProfile.helpers({
   mail() {
     const adresse = Meteor.user().emails[0].address;
     console.log(adresse);
-    return adresse.slice(0, -8);
+    return adresse.split('@')[0];
   },
   initials() {
-    const adresse = Meteor.user().emails[0].address;
-    return adresse.charAt(0);
+    const mail = Meteor.user().emails[0].address;
+    return mail.charAt(0).toUpperCase() + mail.split('.')[1].charAt(0).toUpperCase();
   },
   number() {
     const auteur = Meteor.userId();
