@@ -14,36 +14,6 @@ import { Notifications } from '../../api/notifications.js';
 import '../templates/formNewPost.html';
 
 Template.formNewPost.events({
-  // eslint-disable-next-line no-unused-vars
-  'submit .js-new-post' (event, templateInstance) {
-    event.preventDefault();
-    const titleVal = event.target.title.value;
-    const textVal = event.target.text.value;
-
-    Posts.insert({
-      title: titleVal,
-      text: textVal,
-      createdAt: new Date(),
-
-      auteurID: Meteor.userId(),
-
-      auteurMail: Meteor.user().emails[0].address,
-
-      towerId: FlowRouter.getParam('IdTower'),
-    });
-
-    Notifications.insert({
-      titile: 'new post',
-      createdAt: new Date(),
-      auteurID: Meteor.userId(),
-      towerId: FlowRouter.getParam('IdTower'),
-    });
-    event.target.title.value = '';
-    event.target.text.value = '';
-  },
-});
-
-Template.formNewPost.events({
   'click #bouton'(event) {
     event.preventDefault();
     Swal.fire({
@@ -57,12 +27,27 @@ Template.formNewPost.events({
       confirmButtonText: 'Yes, post it!',
     }).then((result) => {
       if (result.value) {
-        $('form#form').submit();
-        Swal.fire(
-          'Posted!',
-          'Your file has been posted.',
-          'success',
-        );
+        const title = document.getElementById('title');
+        const text = document.getElementById('text');
+        const titleVal = title.value;
+        const textVal = text.value;
+
+        Posts.insert({
+          title: titleVal,
+          text: textVal,
+          createdAt: new Date(),
+
+          auteurID: Meteor.userId(),
+
+          auteurMail: Meteor.user().emails[0].address,
+
+          towerId: FlowRouter.getParam('IdTower'),
+        });
+
+        title.value = '';
+        text.value = '';
+        FlowRouter.go('connexion', { id: FlowRouter.getParam('IdTower') });
+        Swal.fire('Posted!', 'Your file has been posted.', 'success');
       }
     });
   },
