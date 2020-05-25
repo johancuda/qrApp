@@ -1,13 +1,14 @@
 <template name="historique">
     <header>{{> header}}</header>
+    <br>
     <div class="col">
-        <h2>Historique</h2>
+        <h2>history</h2>
         <div class="card-columns">
           {{#each post in posts}} 
       <!--on crée la variable post pour être utilisée dans le temlate single_post-->
               {{>postHistorique post=post}}
           {{/each}}
         </div>
+        <button id="retour" class="btn btn-secondary btn-icon mx-auto rounded-pill">Retour</button>    
     </div>
-    <button id="retour" class="btn btn-secondary">Retour</button>
 </template>
