@@ -13,11 +13,3 @@ Template.qrCode.onRendered(function() {
   url = `${'http://192.168.1.24:3000'}${url}`;
   const qr = new QRCode(document.getElementById('qrcode'), url);
 });
-
-/* Template.qrCode.events({
-  'click #download' (event) {
-    event.preventDefault();
-    const src = $('img').attr('src');
-    $('a').attr('href', src);
-  },
-}); */

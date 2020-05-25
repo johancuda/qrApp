@@ -11,23 +11,6 @@ import { Towers } from '../../api/towers.js';
 import '../templates/formNewTower.html';
 
 
-/* Template.formNewTower.events({
-  // eslint-disable-next-line no-unused-vars
-  'submit .js-new-tower' (event, templateInstance) {
-    event.preventDefault();
-    const titleVal = event.target.title.value;
-
-    Towers.insert({
-      title: titleVal,
-      createdAt: new Date(),
-
-    });
-
-
-    event.target.title.value = '';
-  },
-}); */
-
 Template.formNewTower.events({
   'click #bouton2'(event) {
     event.preventDefault();
