@@ -12,7 +12,6 @@ import { Posts } from '../../api/collections.js';
 Template.currentUserProfile.helpers({
   mail() {
     const adresse = Meteor.user().emails[0].address;
-    console.log(adresse);
     return adresse.split('@')[0];
   },
   initials() {
@@ -23,6 +22,11 @@ Template.currentUserProfile.helpers({
     const auteur = Meteor.userId();
     const posts = Posts.find({ auteurID: auteur }).fetch();
     return posts.length;
+  },
+  numberTowers() {
+    const auteur = Meteor.userId();
+    const publications = Posts.find({ auteurID: auteur }).fetch();
+    return publications.length;
   },
 });
 

@@ -47,6 +47,9 @@ import './templates/listTowers.html';
 import './scripts/listTowers.js';
 import './templates/currentUserProfile.html';
 import './scripts/currentUserProfile.js';
+import './scripts/singlePost.js';
+import './templates/postHistorique.html';
+import './scripts/postHistorique.js';
 
 // bouton déconnexion:
 Template.accueil.events({
@@ -81,6 +84,9 @@ Template.appBody.events({
 
 // helper qui affiche le nom de l'utilisateur connecté
 Template.accueil.helpers({
+  utilisateur: () => Meteor.user().username,
+});
+Template.appBody.helpers({
   utilisateur: () => Meteor.user().username,
 });
 

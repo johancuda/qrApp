@@ -1,36 +1,39 @@
 <template name="currentUserProfile">
   <header>{{> header}}</header>
     <!-- Profile stats : current user-->
-    <div class="card card-fluid">
-        <div class="card-header">
-          <div class="row align-items-center">
-            <div class="col-auto">
-                <div>
-                    <span class="avatar bg-warning text-white rounded-circle">{{initials}}</span>
+    <hr>
+    <div class="col-lg-4">
+        <div class="card card-fluid">
+            <div class="card-header">
+            <div class="row align-items-center">
+                <div class="col-auto">
+                    <div>
+                        <span class="avatar bg-warning text-white rounded-circle">{{initials}}</span>
+                    </div>
+                </div>
+                <div class="col ml-md-n2">
+                <a href="#!" class="d-block h6 mb-0">{{mail}}</a>
+                <small class="d-block text-muted">@unil.ch</small>
                 </div>
             </div>
-            <div class="col ml-md-n2">
-              <a href="#!" class="d-block h6 mb-0">{{mail}}</a>
-              <small class="d-block text-muted">@unil.ch</small>
+            </div>          
+            <div class="card-body">
+            <div class="row">
+                <div class="col-4 text-center">
+                <span class="h5 mb-0">{{number}}</span>
+                <span class="d-block text-sm">Posts</span>
+                </div>
+                <div class="col-4 text-center">
+                <span class="h5 mb-0">{{numberTowers}}</span>
+                <span class="d-block text-sm">Towers</span>
+                </div>
+                <div class="col-4 text-center">
+                <span class="h5 mb-0">1</span>
+                <span class="d-block text-sm">Followers</span>
+                </div>
             </div>
-          </div>
-        </div>          
-        <div class="card-body">
-          <div class="row">
-            <div class="col-4 text-center">
-              <span class="h5 mb-0">{{number}}</span>
-              <span class="d-block text-sm">Posts</span>
             </div>
-            <div class="col-4 text-center">
-              <span class="h5 mb-0">2</span>
-              <span class="d-block text-sm">Towers</span>
-            </div>
-            <div class="col-4 text-center">
-              <span class="h5 mb-0">1</span>
-              <span class="d-block text-sm">Followers</span>
-            </div>
-          </div>
         </div>
-      </div>
+    </div>
       <button id="retour" class="btn btn-secondary">Retour</button>
 </template>
