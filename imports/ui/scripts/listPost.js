@@ -1,7 +1,6 @@
 import { Template } from 'meteor/templating';
-
+import { Meteor } from 'meteor/meteor';
 import '../templates/listPost.html';
-
 import { FlowRouter } from 'meteor/kadira:flow-router';
 import { Posts } from '../../api/collections.js';
 
@@ -19,5 +18,15 @@ Template.listPost.helpers({
   },
   id() {
     return FlowRouter.getParam('id');
+  },
+});
+
+Template.listPost.events({
+  'click #like' (event) {
+    event.preventDefault();
+    const idTower = FlowRouter.getParam('id');
+    const name = Towers.findOne({ _id: idTower });
+    const user = Meteor.users.findOne({ _id: Meteor.userId() });
+    Meteor.users.update({ _id: user._id }, { $push: { 'profile.towers': name._id } });
   },
 });

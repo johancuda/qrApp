@@ -28,6 +28,10 @@ Template.currentUserProfile.helpers({
     const publications = Posts.find({ auteurID: auteur }).fetch();
     return publications.length;
   },
+  likedTowers() {
+    const towers = Meteor.user({ fields: { 'profile.towers': 1 } });
+    return towers.profile.towers.length;
+  },
 });
 
 Template.currentUserProfile.events({

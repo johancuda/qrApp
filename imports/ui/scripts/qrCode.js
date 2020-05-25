@@ -10,7 +10,7 @@ import { FlowRouter } from 'meteor/kadira:flow-router';
 
 Template.qrCode.onRendered(function() {
   let url = FlowRouter.current().path;
-  url = `${'192.168.1.24:3000'}${url}`;
+  url = `${'http://192.168.1.24:3000'}${url}`;
   const qr = new QRCode(document.getElementById('qrcode'), url);
 });
 

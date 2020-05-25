@@ -24,6 +24,7 @@ import './scripts/postPage.js';
 import '../../lib/routes.js';
 
 import './templates/listNotif.html';
+import './scripts/listNotif.js';
 import './templates/settings.html';
 import './templates/profileStat.html';
 
@@ -50,7 +51,8 @@ import './scripts/currentUserProfile.js';
 import './scripts/singlePost.js';
 import './templates/postHistorique.html';
 import './scripts/postHistorique.js';
-
+import './templates/singleNotif.html';
+import './scripts/singleNotif.js';
 // bouton déconnexion:
 Template.accueil.events({
   // eslint-disable-next-line no-unused-vars
@@ -185,5 +187,13 @@ Template.appBody.events({
     event.preventDefault();
     const url = FlowRouter.getParam('id');
     FlowRouter.go('userProfile', { id: url });
+  },
+});
+
+Template.appBody.events({
+  'click .notifications' (event) {
+    event.preventDefault();
+    const url = FlowRouter.getParam('id');
+    FlowRouter.go('notifications', { id: url });
   },
 });

@@ -1,99 +1,38 @@
 <!-- template marche! à raffiner encore-->
 <template name="listNotif">
   <div class="col-lg-8 order-lg-1">  
-  <div id="card-dashboard-8-result" class="tab-pane tab-example-result fade show active" role="tabpanel" aria-labelledby="card-dashboard-8-result-tab">
-    <div class="card">
-      <div class="card-header">
-        <div class="d-flex justify-content-between align-items-center">
-          <div>
-            <h6 class="mb-0">Notifications</h6>
-          </div>
-          <div class="text-right">
-            <div class="actions">
-              <a href="#" class="action-item"><i class="fas fa-sync"></i></a>
-              <div class="dropdown action-item" data-toggle="dropdown">
-                <a href="#" class="action-item"><i class="fas fa-ellipsis-h"></i></a>
-                <div class="dropdown-menu dropdown-menu-right">
-                  <a href="#" class="dropdown-item">Refresh</a>
-                  <a href="#" class="dropdown-item">Manage Widgets</a>
-                  <a href="#" class="dropdown-item">Settings</a>
+    <div id="card-dashboard-8-result" class="tab-pane tab-example-result fade show active" role="tabpanel" aria-labelledby="card-dashboard-8-result-tab">
+      <div class="card">
+        <div class="card-header">
+          <div class="d-flex justify-content-between align-items-center">
+            <div>
+              <h6 class="mb-0">Notifications</h6>
+            </div>
+            <div class="text-right">
+              <div class="actions">
+                <a href="#" class="action-item"><i class="fas fa-sync"></i></a>
+                <div class="dropdown action-item" data-toggle="dropdown">
+                  <a href="#" class="action-item"><i class="fas fa-ellipsis-h"></i></a>
+                  <div class="dropdown-menu dropdown-menu-right">
+                    <a href="#" class="dropdown-item">Refresh</a>
+                    <a href="#" class="dropdown-item">Manage Widgets</a>
+                    <a href="#" class="dropdown-item">Settings</a>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="list-group list-group-flush">
-        <a href="#" class="list-group-item list-group-item-action">
-          <div class="d-flex align-items-center" data-toggle="tooltip" data-placement="right" data-title="2 hrs ago">
-            <div>
-              <span class="avatar bg-primary text-white rounded-circle">SH</span>
-            </div>
-            <div class="flex-fill ml-3">
-              <div class="h6 text-sm mb-0">Section HA<small class="float-right text-muted">2 s ago</small></div>
-              <p class="text-sm lh-140 mb-0">
-                Someone just boardcast a message at this tower.
-              </p>
-            </div>
-          </div>
-        </a>
-        <a href="#" class="list-group-item list-group-item-action">
-          <div class="d-flex align-items-center" data-toggle="tooltip" data-placement="right" data-title="3 hrs ago">
-            <div>
-              <span class="avatar bg-warning text-white rounded-circle">JC</span>
-            </div>
-            <div class="flex-fill ml-3">
-              <div class="h6 text-sm mb-0">johan.cuda<small class="float-right text-muted">4 mins ago</small></div>
-              <p class="text-sm lh-140 mb-0">
-                Someone just dropped a message at Section IN.
-              </p>
-            </div>
-          </div>
-        </a>
-        <a href="#" class="list-group-item list-group-item-action">
-          <div class="d-flex align-items-center" data-toggle="tooltip" data-placement="right" data-title="5 hrs ago">
-            <div>
-              <span class="avatar bg-info text-white rounded-circle">AT</span>
-            </div>
-            <div class="flex-fill ml-3">
-              <div class="h6 text-sm mb-0">Apéro Time<small class="float-right text-muted">1 d ago</small></div>
-              <p class="text-sm lh-140 mb-0">
-                A new tower was added. Check out its location and start sharing.
-              </p>
-            </div>
-          </div>
-        </a>
-        <a href="#" class="list-group-item list-group-item-action">
-          <div class="d-flex align-items-center" data-toggle="tooltip" data-placement="right" data-title="2 hrs ago">
-            <div>
-              <span class="avatar bg-dark text-white rounded-circle">IF</span>
-            </div>
-            <div class="flex-fill ml-3">
-              <div class="h6 text-sm mb-0">isabelle.fasnacht<small class="float-right text-muted">2 w ago</small></div>
-              <p class="text-sm lh-140 mb-0">
-                added your stations as favorites. Good job! ツ
-              </p>
-            </div>
-          </div>
-        </a>
-        <a href="#" class="list-group-item list-group-item-action">
-          <div class="d-flex align-items-center" data-toggle="tooltip" data-placement="right" data-title="3 hrs ago">
-            <div>
-              <span class="avatar bg-primary text-white rounded-circle">HI</span>
-            </div>
-            <div class="flex-fill ml-3">
-              <div class="h6 text-sm mb-0">Welcome 🏁<small class="float-right text-muted">3 hrs ago</small></div>
-              <p class="text-sm lh-140 mb-0">
-                Click here to discover towers near you and start sharing.
-              </p>
-            </div>
-          </div>
-        </a>
-      </div>
-      <div class="card-footer py-2 text-center">
-        <a href="#" class="text-sm text-muted font-weight-bold">See all notifications</a>
+        {{#each notif in notifs}}
+        <div class="list-group list-group-flush">
+        {{>singleNotif notif = notif}}
+        </div>
+        {{/each}}
+        <div class="card-footer py-2 text-center">
+          <a href="#" class="text-sm text-muted font-weight-bold">See all notifications</a>
+        </div>
       </div>
     </div>
   </div>
-  </div>
+  <button id="retour" class="btn btn-secondary">Retour</button>
 </template>

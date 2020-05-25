@@ -21,6 +21,7 @@ Template.newAccount.events({
             username: mail,
             password: mdp,
             email: mail,
+            profile: { towers: [] },
           },
           (error) => {
             if (error) {

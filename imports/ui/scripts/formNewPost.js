@@ -8,6 +8,7 @@ import { Meteor } from 'meteor/meteor';
 
 import { FlowRouter } from 'meteor/kadira:flow-router';
 import { Posts } from '../../api/collections.js';
+import { Notifications } from '../../api/notifications.js';
 
 
 import '../templates/formNewPost.html';
@@ -31,7 +32,12 @@ Template.formNewPost.events({
       towerId: FlowRouter.getParam('IdTower'),
     });
 
-
+    Notifications.insert({
+      titile: 'new post',
+      createdAt: new Date(),
+      auteurID: Meteor.userId(),
+      towerId: FlowRouter.getParam('IdTower'),
+    });
     event.target.title.value = '';
     event.target.text.value = '';
   },

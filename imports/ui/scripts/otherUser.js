@@ -3,11 +3,14 @@ import { Template } from 'meteor/templating';
 
 import { FlowRouter } from 'meteor/kadira:flow-router';
 
+import { Meteor } from 'meteor/meteor';
+
 import '../templates/otherUser.html';
 
 import { Session } from 'meteor/session';
 
 import { Posts } from '../../api/collections.js';
+
 
 Template.otherUser.events({
   'click #retour' (event) {
@@ -33,5 +36,10 @@ Template.otherUser.helpers({
     const auteur = Session.get('id');
     const publications = Posts.find({ auteurID: auteur }).fetch();
     return publications.length;
+  },
+  likedTowers() {
+    const id = Session.get('id');
+    const auteur = Meteor.users.findOne({ _id: id });
+    return auteur.profile.towers.length;
   },
 });
