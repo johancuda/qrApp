@@ -1,0 +1,46 @@
+<template name="header">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+          <a class="navbar-brand" href="">Decoder</a>
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0 align-items-lg-center">
+            <!-- Main function  -->
+            <li class="nav-item active">
+              <a class="nav-link" id ="postPage" href="">Posts <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="border-top opacity-2 my-2"></li>
+            <!-- Lists  -->
+            <li class="nav-item">
+                <a class="nav-link history" href="">
+                History
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="">
+                Subscriptions
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link listTowers" href="">
+                Towers
+                </a>
+            </li>
+            <li class="border-top opacity-2 my-2"></li>
+            <!-- Options -->
+            <li class="nav-item">
+                <a class="nav-link userProfile" href="">
+                Profile
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link js-logout" href="">
+                Log out
+                </a>
+            </li>
+          </ul>
+        </div>
+        <span class="avatar bg-warning text-white rounded-circle avatar-sm my-2">{{initials}}</span>
+      </nav>    
+</template>
