@@ -1,14 +1,57 @@
 <template name="newAccount">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     <p>Créez vous d'abord un compte!</p>
-    <span>Veuillez entrer une adresse UNIL valide:</span>
-    <input type="text" name="mail" id="mail" placeholder="Adresse E-Mail">
-    <br />
-    <span>Mot de passe:</span>
-    <input type="password" name="mdp" id="mdp" placeholder="Min. 5 lettres">
-    <br />
-    <span>Confirmation du mot de passe:</span>
-    <input type="password" name="mdpConf" id="mdpConf" placeholder="Confirmation">
-    <br />
-    <button id="creation">Créer le compte</button>
-    <button id="connexion">Retour</button>
+
+
+    <form role="form">
+        <div class="form-group">
+            <label class="form-control-label">Email address</label>
+            <div class="input-group input-group-merge">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="far fa-user"></i></span>
+                </div>
+                <input type="text" name="mail" id="mail" class="form-control" placeholder="UNIL address only">
+            </div>
+        </div>
+        <div class="form-group mb-4">
+            <label class="form-control-label">Password</label>
+            <div class="input-group input-group-merge">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="far fa-key"></i></span>
+                </div>
+                <input type="password" name="mdp" id="mdp" class="form-control" placeholder="min. 5 lettres">
+                <div class="input-group-append">
+                    <span class="input-group-text">
+                        <a href="#" data-toggle="password-text" data-target="#input-password">
+                            <i class="far fa-eye"></i>
+                        </a>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label">Confirm password</label>
+            <div class="input-group input-group-merge">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="far fa-key"></i></span>
+                </div>
+                <input type="password" name="mdpConf" id="mdpConf" class="form-control" placeholder="type again">
+            </div>
+        </div>
+        <div class="my-4">
+            <div class="custom-control custom-checkbox mb-3">
+                <input type="checkbox" class="custom-control-input" id="check-terms">
+                <label class="custom-control-label" for="check-terms">I agree to the <a href="#">terms and conditions</a></label>
+            </div>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="check-privacy">
+                <label class="custom-control-label" for="check-privacy">I agree to the <a href="#">privacy policy</a></label>
+            </div>
+        </div>
+            <button id="creation" class="btn btn-primary btn-icon mx-auto rounded-pill">
+                <span class="btn-inner--text">Create my account</span>
+                <span class="btn-inner--icon"><i class="far fa-long-arrow-alt-right"></i></span>
+            </button>
+            <button id="connexion" class="btn btn-secondary btn-icon mx-auto rounded-pill">Go back</button>
+    </form>
 </template>

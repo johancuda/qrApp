@@ -1,9 +1,41 @@
 <template name="formConnexion">
-    <span>Adresse E-mail:</span>
-    <input type="text" name="mail" id="mail">
-    <br />
-    <span>Mot de passe:</span>
-    <input type="password" name="mdp" id="mdp">
-    <button type="submit" id="seConnecter">Se connecter</button>
-    <button id="new">Pas encore membre?</button>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <form role="form">
+        <div class="form-group">
+            <label class="form-control-label">Email address</label>
+            <div class="input-group input-group-merge">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="far fa-user"></i></span>
+                </div>
+                <input type="text" name="mail" id="mail" class="form-control" placeholder="name@example.com">
+            </div>
+        </div>
+        <div class="form-group mb-4">
+            <div class="d-flex align-items-center justify-content-between">
+                <div>
+                    <label class="form-control-label">Password</label>
+                </div>
+            </div>
+            <div class="input-group input-group-merge">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="far fa-key"></i></span>
+                </div>
+                <input type="password" name="mdp" id="mdp" class="form-control" placeholder="Password">
+                <div class="input-group-append">
+                    <span class="input-group-text">
+                        <a href="#" data-toggle="password-text" data-target="#input-password">
+                            <i class="far fa-eye"></i>
+                        </a>
+                    </span>
+                </div>
+            </div>
+        </div>
+        
+            <button type="submit" id="seConnecter" class="btn btn-primary btn-icon mx-auto rounded-pill">
+                <span class="btn-inner--text">Log in</span>
+                <span class="btn-inner--icon"><i class="far fa-long-arrow-alt-right"></i></span>
+            </button>
+            <button id="new" class="btn btn-secondary btn-icon mx-auto rounded-pill">Sign Up</button>
+       
+    </form>
 </template>

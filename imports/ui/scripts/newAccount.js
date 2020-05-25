@@ -3,6 +3,7 @@ import { FlowRouter } from 'meteor/kadira:flow-router';
 import { Template } from 'meteor/templating';
 import { Accounts } from 'meteor/accounts-base';
 
+import '../../../client/css/purpose.css';
 
 Template.newAccount.events({
   'click #creation'(event) {
