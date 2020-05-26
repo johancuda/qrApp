@@ -74,9 +74,12 @@ Template.appBody.events({
   'click .js-logout'(event, templateInstance) {
     event.preventDefault();
     Meteor.logout();
+    const url = FlowRouter.getParam('id');
+    FlowRouter.go('connexion', { id: url });
   },
 
   // se reconnecter depuis la navbar
+  // devenu inutile depuis l'ajout de la redirection après déco - là à des fins historiques
   'click .connexion' (event) {
     event.preventDefault();
     const url = FlowRouter.getParam('id');
