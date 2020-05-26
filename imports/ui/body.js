@@ -82,6 +82,14 @@ Template.appBody.events({
     event.preventDefault();
     Meteor.logout();
   },
+
+  // se re-co depuis la navbar
+  'click .connexion' (event) {
+    event.preventDefault();
+    const url = FlowRouter.getParam('id');
+    FlowRouter.go('connexion', { id: url });
+  },
+
 });
 
 // helper qui affiche le nom de l'utilisateur connecté

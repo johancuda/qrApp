@@ -38,11 +38,19 @@
                 Profile
                 </a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link js-logout" href="">
-                Log out
+            {{#if currentUser}}
+              <li class="nav-item">
+                  <a class="nav-link js-logout" href="">
+                  Log out
+                  </a>
+              </li>
+            {{else}}
+              <li class="nav-item">
+                <a class="nav-link connexion" href="">
+                Log in
                 </a>
-            </li>
+              </li>
+            {{/if}}
           </ul>
         </div>
         <span class="avatar bg-warning text-white rounded-circle avatar-sm my-2">{{initials}}</span>
