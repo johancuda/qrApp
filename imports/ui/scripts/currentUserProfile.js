@@ -21,16 +21,25 @@ Template.currentUserProfile.helpers({
   number() {
     const auteur = Meteor.userId();
     const posts = Posts.find({ auteurID: auteur }).fetch();
-    return posts.length;
+    if (posts.length !== 0) {
+      return posts.length;
+    }
+    return 0;
   },
   numberTowers() {
     const auteur = Meteor.userId();
     const publications = Posts.find({ auteurID: auteur }).fetch();
-    return publications.length;
+    if (publications.length !== 0) {
+      return publications.length;
+    }
+    return 0;
   },
   likedTowers() {
     const towers = Meteor.user({ fields: { 'profile.towers': 1 } });
-    return towers.profile.towers.length;
+    if (towers.profile.towers.length !== 0) {
+      return towers.profile.towers.length;
+    }
+    return 0;
   },
 });
 

@@ -27,7 +27,10 @@ Template.otherUser.helpers({
   number() {
     const auteur = Session.get('id');
     const posts = Posts.find({ auteurID: auteur }).fetch();
-    return posts.length;
+    if (posts.length !== 0) {
+      return posts.length;
+    }
+    return 0;
   },
   getInitials() {
     return Session.get('mail').charAt(0);
@@ -35,11 +38,17 @@ Template.otherUser.helpers({
   numberTowers() {
     const auteur = Session.get('id');
     const publications = Posts.find({ auteurID: auteur }).fetch();
-    return publications.length;
+    if (publications.length !== 0) {
+      return publications.length;
+    }
+    return 0;
   },
   likedTowers() {
     const id = Session.get('id');
     const auteur = Meteor.users.findOne({ _id: id });
-    return auteur.profile.towers.length;
+    if (auteur.profile.towers.length !== 0) {
+      return auteur.profile.towers.length;
+    }
+    return 0;
   },
 });
