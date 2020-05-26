@@ -20,9 +20,9 @@ Template.listPost.helpers({
     return FlowRouter.getParam('id');
   },
   initials() {
-    const idTower = this.towerId;
+    const idTower = FlowRouter.getParam('id');
     const name = Towers.find({ _id: idTower }).fetch();
-    return name[0].title.title.charAt(0);
+    return name[0].title.charAt(0);
   },
 });
 
