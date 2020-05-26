@@ -10,6 +10,8 @@ import { Template } from 'meteor/templating';
 
 import { Notifications } from '../../api/notifications.js';
 
+import { NotificationsTowers } from '../../api/notificationsTower.js';
+
 Template.listNotif.helpers({
   notifs() {
     let towers = Meteor.user({ fields: { 'profile.towers': 1 } });
@@ -22,6 +24,10 @@ Template.listNotif.helpers({
       }
     }
     return tableau;
+  },
+  notifsTower() {
+    const notif = NotificationsTowers.find().fetch();
+    return notif;
   },
 });
 
