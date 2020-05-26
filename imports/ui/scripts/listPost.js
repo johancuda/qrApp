@@ -19,6 +19,11 @@ Template.listPost.helpers({
   id() {
     return FlowRouter.getParam('id');
   },
+  initials() {
+    const idTower = this.towerId;
+    const name = Towers.find({ _id: idTower }).fetch();
+    return name[0].title.title.charAt(0);
+  },
 });
 
 Template.listPost.events({
