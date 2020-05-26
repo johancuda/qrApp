@@ -2,10 +2,27 @@
     <header>{{> header}}</header>
     <br>
     <div class="col">
-        <h3>liste des towers</h3>
-            {{#each tower in towers}}
-            <li>{{tower.title}} - location : virtual for testing purposes</li>
-            {{/each}}
+        <div class="card" style="margin-left:auto;margin-right:auto;">
+            <h3 class="card-header">
+                <div>
+                    <div>
+                       <a class="d-block h6 mb-0 profile">Available towers</a>
+                    </div>
+                </div>
+            </h3>
+            <ul style="list-style: none;">
+                <div class="card-body">
+                {{#each tower in towers}}
+                <div class="list-group list-group-flush">
+                    <div class="row align-items-center">
+                        <a class="float-left mb-0 d-block h6">{{tower.title}} :</a>
+                        <a href="" class="lien col ml-md-n2">{{tower._id}}</a>
+                    </div>
+                </div>
+                {{/each}}
+                </div>
+            </ul>
+        </div>
         <br>    
         <button id="retour" class="btn btn-secondary btn-icon mx-auto rounded-pill">Retour</button>
     </div>

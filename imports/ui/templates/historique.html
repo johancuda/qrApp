@@ -1,14 +1,26 @@
 <template name="historique">
     <header>{{> header}}</header>
     <br>
-    <div class="col">
-        <h3>history</h3>
-        <div class="card-columns">
-          {{#each post in posts}} 
-      <!--on crée la variable post pour être utilisée dans le temlate single_post-->
-              {{>postHistorique post=post}}
-          {{/each}}
+    <div class="col order-lg-1">
+    <div class="card">
+        <div class="card-header">
+          <div class="d-flex justify-content-between align-items-center">
+            <div>
+              <h6 class="mb-0">History of posts</h6>
+            </div>
+          </div>
         </div>
-        <button id="retour" class="btn btn-secondary btn-icon mx-auto rounded-pill">Retour</button>    
+        <div class="col">
+          <br>
+          <div class="card-columns">
+          {{#each post in posts}} 
+          <!--on crée la variable post pour être utilisée dans le temlate single_post-->
+          {{>postHistorique post=post}}
+          {{/each}}
+          </div>
+        </div>
+      </div>
+      <br>
+      <button id="retour" class="btn btn-secondary btn-icon mx-auto rounded-pill">Retour</button> 
     </div>
 </template>
