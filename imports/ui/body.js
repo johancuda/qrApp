@@ -53,13 +53,6 @@ import './templates/postHistorique.html';
 import './scripts/postHistorique.js';
 import './templates/singleNotif.html';
 import './scripts/singleNotif.js';
-// bouton déconnexion:
-Template.accueil.events({
-  // eslint-disable-next-line no-unused-vars
-  'click .js-logout'(event, templateInstance) {
-    Meteor.logout();
-  },
-});
 
 // route pour faire un post
 Template.appBody.events({
@@ -76,14 +69,14 @@ Template.appBody.events({
     const url = FlowRouter.getParam('IdTower');
     FlowRouter.go('connexion', { id: url });
   },
-  // et pour déco
+  // Déconnexion depuis la navbar
   // eslint-disable-next-line no-unused-vars
   'click .js-logout'(event, templateInstance) {
     event.preventDefault();
     Meteor.logout();
   },
 
-  // se re-co depuis la navbar
+  // se reconnecter depuis la navbar
   'click .connexion' (event) {
     event.preventDefault();
     const url = FlowRouter.getParam('id');
