@@ -17,6 +17,11 @@
         {{>singleNotif notif = notif}}
         </div>
         {{/each}}
+        {{#each notifTower in notifsTower}}
+        <div class="list-group list-group-flush">
+          {{>singleNotifTower notifTower = notifTower}}
+          </div>
+        {{/each}}
         <div class="card-footer py-2 text-center">
           <a href="#" class="text-sm text-muted font-weight-bold">See all notifications</a>
         </div>

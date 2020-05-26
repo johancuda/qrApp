@@ -8,6 +8,9 @@ import { FlowRouter } from 'meteor/kadira:flow-router';
 
 import { Towers } from '../../api/towers.js';
 
+
+import { NotificationsTowers } from '../../api/notificationsTower.js';
+
 import '../templates/formNewTower.html';
 
 
@@ -30,6 +33,10 @@ Template.formNewTower.events({
         Towers.insert({
           title: titleVal,
           text: textVal,
+          createdAt: new Date(),
+        });
+        NotificationsTowers.insert({
+          titile: 0,
           createdAt: new Date(),
         });
         document.getElementById('towerName').innerHTML = '';
