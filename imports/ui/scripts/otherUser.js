@@ -33,7 +33,7 @@ Template.otherUser.helpers({
     return 0;
   },
   getInitials() {
-    return Session.get('mail').charAt(0);
+    return Session.get('mail').charAt(0).toUpperCase() + Session.get('mail').split('.')[1].charAt(0).toUpperCase();
   },
   numberTowers() {
     const auteur = Session.get('id');
