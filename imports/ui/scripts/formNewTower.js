@@ -26,8 +26,10 @@ Template.formNewTower.events({
     }).then((result) => {
       if (result.value) {
         const titleVal = document.getElementById('towerName').value;
+        const textVal = document.getElementById('text').value;
         Towers.insert({
           title: titleVal,
+          text: textVal,
           createdAt: new Date(),
         });
         document.getElementById('towerName').innerHTML = '';

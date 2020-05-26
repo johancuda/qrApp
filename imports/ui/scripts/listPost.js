@@ -24,6 +24,12 @@ Template.listPost.helpers({
     const name = Towers.find({ _id: idTower }).fetch();
     return name[0].title.charAt(0);
   },
+  description() {
+    const idTower = FlowRouter.getParam('id');
+    const tower = Towers.find({ _id: idTower }).fetch();
+    console.log(tower);
+    return tower[0].text;
+  },
 });
 
 Template.listPost.events({
