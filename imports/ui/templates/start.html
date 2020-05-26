@@ -1,10 +1,39 @@
 <template name="start">
-    <div>
-        <ul>
-            <h1>Liste des towers disponibles</h1>
-            {{#each tower in towers}}
-            <li>{{tower.title}} - <a href="" class="lien">{{tower._id}}</a></li>
-            {{/each}}
-        </ul>
+ <div class="container">  
+    <div class="row">
+        <div class="display-1 elem1" style="margin-left:auto;margin-right:auto;text-align:center;padding-top:90px"> 
+        {{>logo2}}
+        </div>
+        <br>
     </div>
+    <br>
+    <br>
+    <div style="text-align:justify;margin-left:auto;margin-right:auto;">
+    Our project consists of building a message sharing app for the campus where students need to move around in real life contexts to decrypt messages. It aims to encourage quick knowledge sharing and virtual-real life interactions in between the students.
+    </div>  
+    
+    <hr>
+    
+    <div class="card" style="margin-left:auto;margin-right:auto;">
+        <h3 class="card-header">
+            <div class="col-auto">
+                <div>
+                   <a class="d-block h6 mb-0 profile">Start your Demo experience here</a>
+                </div>
+            </div>
+        </h3>
+        <ol>
+            <div class="card-body">
+            {{#each tower in towers}}
+            <li style="margin-left:auto;margin-right:auto;">
+                <div class="row align-items-center">
+                    <a class="col-auto d-block h6 mb-0 profile">{{tower.title}} -</a>
+                    <a href="" class="lien col ml-md-n2">{{tower._id}}</a>
+                </div>
+            </li>
+            {{/each}}
+            </div>
+        </ol>
+    </div>
+ </div>
 </template>

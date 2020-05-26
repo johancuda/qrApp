@@ -53,6 +53,10 @@ import './templates/postHistorique.html';
 import './scripts/postHistorique.js';
 import './templates/singleNotif.html';
 import './scripts/singleNotif.js';
+
+import './templates/logo.html';
+import './templates/logo2.html';
+
 // bouton déconnexion:
 Template.accueil.events({
   // eslint-disable-next-line no-unused-vars

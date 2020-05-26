@@ -1,8 +1,13 @@
 <template name="newAccount">
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
-    <p>Créez vous d'abord un compte!</p>
-
-
+    <div class="row">
+        <div class="display-1 elem1" style="margin-left:auto;margin-right:auto;text-align:center;padding-top:90px"> 
+        {{>logo2}}
+        </div>
+        <br>
+    </div>
+    <br>
+    <br>
     <form role="form">
         <div class="form-group">
             <label class="form-control-label">Email address</label>
@@ -43,14 +48,10 @@
                 <input type="checkbox" class="custom-control-input" id="check-terms">
                 <label class="custom-control-label" for="check-terms">I agree to the <a href="#">terms and conditions</a></label>
             </div>
-            <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="check-privacy">
-                <label class="custom-control-label" for="check-privacy">I agree to the <a href="#">privacy policy</a></label>
-            </div>
         </div>
-            <button id="creation" class="btn btn-primary btn-icon mx-auto rounded-pill">
-                <span class="btn-inner--text">Create my account</span>
+            <button id="connexion" class="btn btn-secondary btn-icon mx-auto rounded-pill">Already have an account?</button>
+            <button id="creation" class="float-right btn btn-primary btn-icon mx-auto rounded-pill">
+                <span class="btn-inner--text">Sign up</span>
             </button>
-            <button id="connexion" class="btn btn-secondary btn-icon mx-auto rounded-pill">Go back</button>
     </form>
 </template>
