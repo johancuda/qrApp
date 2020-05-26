@@ -27,7 +27,6 @@ Template.listPost.helpers({
   description() {
     const idTower = FlowRouter.getParam('id');
     const tower = Towers.find({ _id: idTower }).fetch();
-    console.log(tower);
     return tower[0].text;
   },
 });
