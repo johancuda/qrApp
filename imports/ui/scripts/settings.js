@@ -23,7 +23,7 @@ Template.settings.events({
       if (result.value) {
         Meteor.users.remove({ _id: Meteor.userId() });
         FlowRouter.go('connexion', { id: FlowRouter.getParam('id') });
-        Swal.fire('Deleted!', 'Your file has been deleted.', 'success');
+        Swal.fire('Deleted!', 'Your account has been deleted.', 'success');
       }
     });
   },

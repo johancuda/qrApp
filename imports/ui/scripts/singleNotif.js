@@ -15,4 +15,9 @@ Template.singleNotif.helpers({
     const name = Towers.find({ _id: tower }).fetch();
     return name[0].title.charAt(0);
   },
+  random() {
+    const number = Math.floor((Math.random() * 3));
+    const tab = ['Mmh?! New post here.', 'I think there might be something interesting here...', 'Hey! Wanna see something funky?'];
+    return tab[number];
+  },
 });
