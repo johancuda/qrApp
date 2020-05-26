@@ -1,5 +1,6 @@
 <!-- permet d'afficher les posts en attendant d'avoir le routing -->
 <template name="listPost">
+<div class="col order-lg-1">  
   <div class="card card-fluid">
     <div class="card-header">
       <div class="row align-items-center">
@@ -35,7 +36,7 @@
     </div>
     <div class="card-footer">
         <button id="tower" class="btn btn-info btn-lg mx-auto rounded-pill">Create a tower</button>
-        <button id="post" class="float-right btn btn-primary btn-lg mx-auto rounded-pill">Add new post</button>
+        <button id="post" class="float-right btn btn-primary btn-lg mx-auto rounded-pill">Add post</button>
     </div>
   </div>
 
@@ -59,12 +60,6 @@
           {{/each}}
           </div>
         </div>
-      </div>
-    
-
-
-
-
-  
-
+      </div>  
+</div>
 </template>  

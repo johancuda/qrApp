@@ -1,5 +1,13 @@
 <template name="formConnexion">
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <div class="row">
+        <div class="display-1 elem1" style="margin-left:auto;margin-right:auto;text-align:center;padding-top:90px"> 
+        {{>logo2}}
+        </div>
+        <br>
+    </div>
+    <br>
+    <br>
     <form role="form">
         <div class="form-group">
             <label class="form-control-label">Email address</label>
@@ -7,7 +15,7 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text"><i class="far fa-user"></i></span>
                 </div>
-                <input type="text" name="mail" id="mail" class="form-control" placeholder="name@example.com">
+                <input type="text" name="mail" id="mail" class="form-control" placeholder="example@unil.ch">
             </div>
         </div>
         <div class="form-group mb-4">
@@ -30,11 +38,9 @@
                 </div>
             </div>
         </div>
-        
-            <button type="submit" id="seConnecter" class="btn btn-primary btn-icon mx-auto rounded-pill">
+            <button id="new" class="btn btn-secondary btn-icon mx-auto rounded-pill">Create an account?</button>
+            <button type="submit" id="seConnecter" class="float-right btn btn-primary btn-icon mx-auto rounded-pill">
                 <span class="btn-inner--text">Log in</span>
-            </button>
-            <button id="new" class="btn btn-secondary btn-icon mx-auto rounded-pill">Sign Up</button>
-       
+            </button>     
     </form>
 </template>

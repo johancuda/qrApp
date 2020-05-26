@@ -54,6 +54,17 @@ import './scripts/postHistorique.js';
 import './templates/singleNotif.html';
 import './scripts/singleNotif.js';
 
+import './templates/logo.html';
+import './templates/logo2.html';
+
+// bouton déconnexion:
+Template.accueil.events({
+  // eslint-disable-next-line no-unused-vars
+  'click .js-logout'(event, templateInstance) {
+    Meteor.logout();
+  },
+});
+
 // route pour faire un post
 Template.appBody.events({
   'click #post'(event) {
