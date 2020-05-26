@@ -56,6 +56,7 @@ import './scripts/singleNotif.js';
 
 import './templates/logo.html';
 import './templates/logo2.html';
+import './scripts/settings.js';
 
 // bouton déconnexion:
 Template.accueil.events({
