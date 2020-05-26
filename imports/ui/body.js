@@ -80,14 +80,14 @@ Template.appBody.events({
     const url = FlowRouter.getParam('IdTower');
     FlowRouter.go('connexion', { id: url });
   },
-  // et pour déco
+  // Déconnexion depuis la navbar
   // eslint-disable-next-line no-unused-vars
   'click .js-logout'(event, templateInstance) {
     event.preventDefault();
     Meteor.logout();
   },
 
-  // se re-co depuis la navbar
+  // se reconnecter depuis la navbar
   'click .connexion' (event) {
     event.preventDefault();
     const url = FlowRouter.getParam('id');
