@@ -1,4 +1,4 @@
-# Decoder [Corriger le nom]
+# Decoder
 
 Un projet réalisé dans le cadre du cours _Programmation pour Internet II - Meteor.js._
 Université de Lausane, Faculté des Lettres, semestre de printemps 2020.
@@ -25,9 +25,6 @@ L'application comprend 4 bases de données: la première répertorie les contenu
 * La validation par mail à la création d'un nouveau compte n'est pas implémentée, ce qui représente un risque de sécurité et ne garanti pas l'identité des utilisateurs.
 * La page d'accueil listant les towers existantes et permettant d'y accéder n'existerait plus en cas de déploiement, elle sert à l'utilisation en local de l'application.
 Le QR code généré pour chaque tower n'est actuellement utilisable qu'en local; pour l'utiliser chez vous (en le scannant par exemple avec l'appareil photo de votre iphone), il vous suffit de remplacer - à la ligne 13 du fichier qrCode.js - l'adresse IP présente par celle de votre propre ordinateur. Il faut bien entendu que votre appareil mobile et votre ordinateur soient connectés au même réseau Wifi.
-
-[inclure captures d'écran?]
-
 
 ## Packages utilisés
 
