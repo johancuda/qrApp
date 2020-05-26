@@ -7,7 +7,7 @@ Université de Lausane, Faculté des Lettres, semestre de printemps 2020.
 ## Description
 
 Decoder se veut un réseau de partage ancré dans le monde réel. En scannant des QR codes disséminés dans les bâtiments de l'université, les utilisateurs peuvent accéder à des contenus postés et associés à cet endroit précis et ajouter le leur.
-Un système de notifications permet de s'abonner aux contenus d'un de ces lieux (ou stations - nommées par la suite "towers").
+Un système de notifications permet de s'abonner aux contenus d'un de ces lieux (ou stations - nommées par la suite "towers") et de savoir lorsqune nouvelle tower est créée.
 Afin de permettre de meilleures interactions et de favoriser un comportement respecteux, la création d'un compte nécessite une adresse universitaire valide qui est ensuite publiquement associée aux contenus postés.
 
 
