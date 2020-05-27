@@ -51,4 +51,7 @@ Template.otherUser.helpers({
     }
     return 0;
   },
+  getEmail() {
+    return Session.get('mail');
+  },
 });
